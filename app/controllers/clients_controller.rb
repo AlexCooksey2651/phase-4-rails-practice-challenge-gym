@@ -8,8 +8,7 @@ class ClientsController < ApplicationController
     
     def show
         client = Client.find(params[:id])
-        # render json: client, include: :memberships
-        render json: client
+        render json: client, serializer: ClientMembershipSerializer
     end
 
     def update
